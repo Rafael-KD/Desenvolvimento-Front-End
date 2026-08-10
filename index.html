@@ -1,11 +1,163 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+     <title>Gerenciador de Tarefas</title>
 </head>
 <body>
+     <header>
+          <h1>Gerenciador  de Tarefas Acadêmicas</h1>
+     </header>
+     
+     <main>
+          
+          <form action="buscar-por-filtro" method="get">
+
+               <p>
+                    <label for="buscar-titulo">
+                         Buscar por título:
+                    </label>
+                    <input type="text" name="buscar-titulo" id="buscar-titulo" placeholder="Digite um título...">
+               </p>
+
+               <p>
+                    <label for="filtrar-status">
+                         Filtrar por Status:
+                    </label>
+                    <select name="select-filtrar-status" id="filtrar-status">
+                         <option value="selecione">Selecione...</option>
+                         <option value="fazer">A fazer</option>
+                         <option value="em-andamento">Em andamento</option>
+                         <option value="em-revisao">Em revisão</option>
+                         <option value="concluidas">Concluídas</option>
+                    </select>
+               </p>
+
+               <p>
+                    <label for="filtrar-prioridade">
+                         Filtrar por Prioridade:
+                    </label>
+                    <select name="select-filtrar-prioridade" id="filtrar-prioridade">
+                         <option value="selecione">Selecione...</option>
+                         <option value="baixa">Baixa</option>
+                         <option value="media">Média</option>
+                         <option value="alta">Alta</option>
+                    </select>
+               </p>
+               
+          </form>
+
+          <section aria-labelledby="titulo-a-fazer">
+               <h2 id="titulo-a-fazer">A fazer</h2>
+               <ul>
+                    <li>
+                         <article>
+                              <h3>Criar algoritmo de média de notas</h3>
+                              <p>Projeto: Lógica de Programação</p>
+                              <p>Responsável: Rafael</p>
+                              <p>Prazo: 2 dias</p>
+                              <p>Prioridade: Alta</p>
+                         </article>
+                    </li>
+                    <li>
+                         <article>
+                              <h3>Modelar diagrama de classes</h3>
+                              <p>Projeto: Programação Orientada a Objetos</p>
+                              <p>Responsável: Lucas</p>
+                              <p>Prazo: 3 dias</p>
+                              <p>Prioridade: Alta</p>
+                         </article>
+                    </li>
+               </ul>
+
+          </section>
+
+          <section aria-labelledby="titulo-em-andamento">
+                    <h2 id="titulo-em-andamento">Em andamento</h2>
+                    <ul>
+                         <li>
+                              <article>
+                                   <h3>Criar consultas utilizando JOIN</h3>
+                                   <p>Projeto: Banco de Dados</p>
+                                   <p>Responsável: Mariana</p>
+                                   <p>Prazo: 5 dias</p>
+                                   <p>Prioridade: Média</p>
+                              </article>
+                         </li>
+                         <li>
+                              <article>
+                                   <h3>Desenvolver formulário em HTML</h3>
+                                   <p>Projeto: Desenvolvimento Web</p>
+                                   <p>Responsável: Rafael</p>
+                                   <p>Prazo: 6 dias</p>
+                                   <p>Prioridade: Média</p>
+                              </article>
+                         </li>                        
+                    </ul>
+
+          </section>
+
+          <section aria-labelledby="titulo-em-revisao">
+                    <h2 id="titulo-em-revisao">Em revisão</h2>
+                    <ul>
+                         <li>
+                              <article>
+                                   <h3>Criar modelo entidade-relacionamento</h3>
+                                   <p>Projeto: Banco de Dados</p>
+                                   <p>Responsável: Gabriel</p>
+                                   <p>Prazo: 7 dias</p>
+                                   <p>Prioridade: Média</p>
+                              </article>
+                         </li>
+                         <li>
+                              <article>
+                                   <h3>Implementar sistema de cadastro em Java</h3>
+                                   <p>Projeto: Programação Orientada a Objetos</p>
+                                   <p>Responsável: Ana</p>
+                                   <p>Prazo: 9 dias</p>
+                                   <p>Prioridade: Baixa</p>
+                              </article>
+                         </li>
+                    </ul>
+
+          </section>
+
+          <section aria-labelledby="titulo-concluidas">
+                    <h2 id="titulo-concluidas">Concluídas</h2>
+                    <ul>
+                         <li>
+                              <article>
+                                   <h3>Montar página utilizando HTML semântico</h3>
+                                   <p>Projeto: Desenvolvimento Web</p>
+                                   <p>Responsável: Pedro</p>
+                                   <p>Prazo: 12 dias</p>
+                                   <p>Prioridade: Baixa</p>
+                              </article>
+                         </li>
+                         <li>
+                              <article>
+                                   <h3>Criar algoritmo de ordenação de vetor</h3>
+                                   <p>Projeto: Estrutura de Dados</p>
+                                   <p>Responsável: Rafael</p>
+                                   <p>Prazo: 15 dias</p>
+                                   <p>Prioridade: Baixa</p>
+                              </article>
+                         </li>
+                    </ul>
+
+          </section>          
+
+     </main>
+
+     <footer>
+          <p>
+               Rafael Borges
+          </p>
+          <p>
+               Desenvolvimento Front-End
+          </p>
+     </footer>
      
 </body>
 </html>
