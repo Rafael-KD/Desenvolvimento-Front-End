@@ -18,33 +18,53 @@
                     <label for="buscar-titulo">
                          Buscar por título:
                     </label>
-                    <input type="text" name="buscar-titulo" id="buscar-titulo" placeholder="Digite um título...">
+                    <input type="text" name="buscar-titulo" id="buscar-titulo">
                </p>
 
-               <p>
-                    <label for="filtrar-status">
-                         Filtrar por Status:
-                    </label>
-                    <select name="select-filtrar-status" id="filtrar-status">
-                         <option value="selecione">Selecione...</option>
-                         <option value="fazer">A fazer</option>
-                         <option value="em-andamento">Em andamento</option>
-                         <option value="em-revisao">Em revisão</option>
-                         <option value="concluidas">Concluídas</option>
-                    </select>
-               </p>
+               <fieldset>
+                    <legend>Filtrar por Status</legend>
+                    
+                    <p>
+                         <input type="radio" name="status" id="a-fazer" value="a-fazer">
+                         <label for="a-fazer">A fazer</label>
+                    </p>
 
-               <p>
-                    <label for="filtrar-prioridade">
-                         Filtrar por Prioridade:
-                    </label>
-                    <select name="select-filtrar-prioridade" id="filtrar-prioridade">
-                         <option value="selecione">Selecione...</option>
-                         <option value="baixa">Baixa</option>
-                         <option value="media">Média</option>
-                         <option value="alta">Alta</option>
-                    </select>
-               </p>
+                    <p>
+                         <input type="radio" name="status" id="status-em-andamento" value="em-andamento">
+                         <label for="status-em-andamento">Em andamento</label>
+                    </p>
+
+                    <p>
+                         <input type="radio" name="status" id="status-em-revisao" value="em-revisao">
+                         <label for="status-em-revisao">Em revisão</label>
+                    </p>
+
+                    <p>
+                         <input type="radio" name="status" id="status-concluidas" value="concluidas">
+                         <label for="status-concluidas">Concluídas</label>
+                    </p>
+
+               </fieldset>
+
+               <fieldset>
+                    <legend>Filtrar por Prioridade</legend>
+                    
+                    <p>
+                         <input type="radio" name="prioridade" id="prioridade-baixa" value="baixa">
+                         <label for="prioridade-baixa">Baixa</label>
+                    </p>
+
+                    <p>
+                         <input type="radio" name="prioridade" id="prioridade-media" value="media">
+                         <label for="prioridade-media">Média</label>
+                    </p>
+
+                    <p>
+                         <input type="radio" name="prioridade" id="prioridade-alta" value="alta">
+                         <label for="prioridade-alta">Alta</label>
+                    </p>
+                    
+               </fieldset>
                
           </form>
 
