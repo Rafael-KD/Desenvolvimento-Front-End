@@ -4,6 +4,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Gerenciador de Tarefas</title>
+     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
      <header>
@@ -68,7 +69,7 @@
                
           </form>
 
-          <section aria-labelledby="titulo-a-fazer">
+          <section class="coluna" aria-labelledby="titulo-a-fazer">
                <h2 id="titulo-a-fazer">A fazer</h2>
                <ul>
                     <li>
@@ -93,7 +94,7 @@
 
           </section>
 
-          <section aria-labelledby="titulo-em-andamento">
+          <section class="coluna coluna-em-andamento" aria-labelledby="titulo-em-andamento">
                     <h2 id="titulo-em-andamento">Em andamento</h2>
                     <ul>
                          <li>
@@ -118,7 +119,7 @@
 
           </section>
 
-          <section aria-labelledby="titulo-em-revisao">
+          <section class="coluna coluna-em-revisao" aria-labelledby="titulo-em-revisao">
                     <h2 id="titulo-em-revisao">Em revisão</h2>
                     <ul>
                          <li>
@@ -143,7 +144,7 @@
 
           </section>
 
-          <section aria-labelledby="titulo-concluidas">
+          <section class="coluna coluna-concluidas" aria-labelledby="titulo-concluidas">
                     <h2 id="titulo-concluidas">Concluídas</h2>
                     <ul>
                          <li>
