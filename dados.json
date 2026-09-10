@@ -1,0 +1,76 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "titulo": "Criar algoritmo de média de notas",
+      "status": "a-fazer",
+      "projeto": "Lógica de Programação",
+      "responsavel": "Rafael",
+      "prazo": "2 dias",
+      "prioridade": "Alta"
+    },
+    {
+      "id": 2,
+      "titulo": "Modelar diagrama de classes",
+      "status": "a-fazer",
+      "projeto": "Programação Orientada a Objetos",
+      "responsavel": "Lucas",
+      "prazo": "3 dias",
+      "prioridade": "Alta"
+    },
+    {
+      "id": 3,
+      "titulo": "Criar consultas utilizando JOIN",
+      "status": "em-andamento",
+      "projeto": "Banco de Dados",
+      "responsavel": "Mariana",
+      "prazo": "5 dias",
+      "prioridade": "Média"
+    },
+    {
+      "id": 4,
+      "titulo": "Desenvolver formulário em HTML",
+      "status": "em-andamento",
+      "projeto": "Desenvolvimento Web",
+      "responsavel": "Rafael",
+      "prazo": "6 dias",
+      "prioridade": "Média"
+    },
+    {
+      "id": 5,
+      "titulo": "Criar modelo entidade-relacionamento",
+      "status": "em-revisao",
+      "projeto": "Banco de Dados",
+      "responsavel": "Gabriel",
+      "prazo": "7 dias",
+      "prioridade": "Média"
+    },
+    {
+      "id": 6,
+      "titulo": "Implementar sistema de cadastro em Java",
+      "status": "em-revisao",
+      "projeto": "Programação Orientada a Objetos",
+      "responsavel": "Ana",
+      "prazo": "9 dias",
+      "prioridade": "Baixa"
+    },
+    {
+      "id": 7,
+      "titulo": "Montar página utilizando HTML semântico",
+      "status": "concluidas",
+      "projeto": "Desenvolvimento Web",
+      "responsavel": "Pedro",
+      "prazo": "12 dias",
+      "prioridade": "Baixa"
+    },
+    {
+      "id": 8,
+      "titulo": "Criar algoritmo de ordenação de vetor",
+      "status": "concluidas",
+      "projeto": "Estrutura de Dados",
+      "responsavel": "Rafael",
+      "prazo": "15 dias",
+      "prioridade": "Baixa"
+    }
+  ]
+}
