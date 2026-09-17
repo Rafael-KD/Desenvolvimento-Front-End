@@ -7,57 +7,64 @@ function configurarEventos() {
   const filtroPrioridade = document.getElementById("filtro-prioridade");
   const filtroOrdenacao = document.getElementById("filtro-ordenacao");
   const botaoLimpar = document.getElementById("botao-limpar");
-  const formulario = document.querySelector("form");
+  const formulario = document.getElementById("filtros");
+  const areaTarefas = document.querySelector("main");
 
-  if (formulario) {
-    formulario.addEventListener("submit", (evento) => {
-      evento.preventDefault();
-    });
-  }
+  formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+  });
 
-  if (campoBusca) {
-    campoBusca.addEventListener("input", (e) => {
-      estado.busca = e.target.value;
+  campoBusca.addEventListener("input", (evento) => {
+    estado.busca = evento.target.value;
+    renderizarEstado(estado);
+  });
+
+  filtroStatus.addEventListener("change", (evento) => {
+    estado.status = evento.target.value;
+    renderizarEstado(estado);
+  });
+
+  filtroPrioridade.addEventListener("change", (evento) => {
+    estado.prioridade = evento.target.value;
+    renderizarEstado(estado);
+  });
+
+  filtroOrdenacao.addEventListener("change", (evento) => {
+    estado.ordenacao = evento.target.value;
+    renderizarEstado(estado);
+  });
+
+  botaoLimpar.addEventListener("click", () => {
+    estado.busca = "";
+    estado.status = "Todos";
+    estado.prioridade = "Todas";
+    estado.ordenacao = "padrao";
+    estado.tarefaSelecionada = null;
+
+    campoBusca.value = "";
+    filtroStatus.value = "Todos";
+    filtroPrioridade.value = "Todas";
+    filtroOrdenacao.value = "padrao";
+
+    renderizarEstado(estado);
+  });
+
+  areaTarefas.addEventListener("click", (evento) => {
+    const botao = evento.target.closest(".botao-tarefa");
+
+    if (!botao) {
+      return;
+    }
+
+    const tarefa = estado.tarefas.find(
+      (item) => item.id === Number(botao.dataset.id)
+    );
+
+    if (tarefa) {
+      estado.tarefaSelecionada = tarefa.id;
       renderizarEstado(estado);
-    });
-  }
-
-  if (filtroStatus) {
-    filtroStatus.addEventListener("change", (e) => {
-      estado.status = e.target.value;
-      renderizarEstado(estado);
-    });
-  }
-
-  if (filtroPrioridade) {
-    filtroPrioridade.addEventListener("change", (e) => {
-      estado.prioridade = e.target.value;
-      renderizarEstado(estado);
-    });
-  }
-
-  if (filtroOrdenacao) {
-    filtroOrdenacao.addEventListener("change", (e) => {
-      estado.ordenacao = e.target.value;
-      renderizarEstado(estado);
-    });
-  }
-
-  if (botaoLimpar) {
-    botaoLimpar.addEventListener("click", () => {
-      estado.busca = "";
-      estado.status = "Todos";
-      estado.prioridade = "Todas";
-      estado.ordenacao = "padrao";
-
-      if (campoBusca) campoBusca.value = "";
-      if (filtroStatus) filtroStatus.value = "Todos";
-      if (filtroPrioridade) filtroPrioridade.value = "Todas";
-      if (filtroOrdenacao) filtroOrdenacao.value = "padrao";
-
-      renderizarEstado(estado);
-    });
-  }
+    }
+  });
 }
 
 async function iniciar() {
@@ -66,12 +73,9 @@ async function iniciar() {
   renderizarEstado(estado);
 
   try {
-    const tarefas = await carregarTarefas();
-
-    estado.tarefas = tarefas;
+    estado.tarefas = await carregarTarefas();
     estado.carregamento = false;
     renderizarEstado(estado);
-
     configurarEventos();
   } catch (erro) {
     estado.carregamento = false;
@@ -83,7 +87,8 @@ async function iniciar() {
       estado.erro =
         "Erro de formato. Verifique o conteúdo do arquivo dados.json.";
     } else if (erro.status) {
-      estado.erro = `Erro HTTP ${erro.status}. Não foi possível obter o arquivo de tarefas.`;
+      estado.erro =
+        `Erro HTTP ${erro.status}. Não foi possível obter o arquivo de tarefas.`;
     } else {
       estado.erro = "Não foi possível carregar as tarefas.";
     }
